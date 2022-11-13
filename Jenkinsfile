@@ -27,4 +27,5 @@ pipeline{
             bat "echo success"
             }
         }
+   }
 }
