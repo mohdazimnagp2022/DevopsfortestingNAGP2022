@@ -1,32 +1,13 @@
-pipeline{
+pipeline {
     agent any
-    	environment {
-		notifyEmail ="mohd.azim@nagarro.com"
-	}
-    tools{
-        maven 'Maven'
+    parameters {
+        string(name: 'Greeting', defaultValue: 'Hello', description: 'How should I greet the world?')
     }
-    stages{
-        stage("code checkout"){
-            steps{
-            bat "echo hello"
-            }
-        }   
-        stage("code build"){
-            steps{
-            bat "mvn clean"
-            }
-        }
-        stage("unit test"){
-            steps{
-            bat "mvn test"
+    stages {
+        stage('Example') {
+            steps {
+                echo "${params.Greeting} World!"
             }
         }
     }
-        post{
-        success{
-            bat "echo success"
-            }
-        }
-   }
-
+}
