@@ -22,10 +22,11 @@ pipeline{
             bat "mvn test"
             }
         }
+    }
         post{
         success{
             bat "echo success"
             }
         }
    }
-}
+
