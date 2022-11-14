@@ -21,4 +21,4 @@ pipeline{
             steps{
             echo "mvn test"
             }
-        }}}}
+        }}}
